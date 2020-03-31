@@ -1,4 +1,14 @@
 import os
+url="https://raw.githubusercontent.com/48panda48/quiz/master/version.txt"
+import requests
+response = requests.get(url).text
+if str(response)!="0.9\nn":
+    print("Update Available.")
+    print(response)
+    import webbrowser
+    webbrowser.open('https://www.github.com/48panda48/quiz')
+    import sys
+    sys.exit()
 from datetime import datetime
 def get_time():
     now = datetime.now()

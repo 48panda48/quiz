@@ -1,4 +1,14 @@
 from tkinter import *
+url="https://raw.githubusercontent.com/48panda48/quiz/master/version.txt"
+import requests
+response = requests.get(url).text
+if str(response)!="1.0\n":
+    print("Update Available.")
+    print(response)
+    import webbrowser
+    webbrowser.open('https://www.github.com/48panda48/quiz')
+    import sys
+    sys.exit()
 master = Tk()
 var1 = IntVar()
 Checkbutton(master, text="Do Questions in Order", variable=var1).grid(row=0, sticky=W)
